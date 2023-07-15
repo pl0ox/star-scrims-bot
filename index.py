@@ -886,4 +886,4 @@ async def adminhelp(Interaction: discord.Interaction):
     await Interaction.response.send_message(embed=embed)
 
 
-bot.run('MTEyODI2MjczNjE2NjUzNTE5OQ.GLw1Ae.14pPXZJFWCwK9Ji9g70jo4_vwYi_LA2_ABlq_g')
+bot.run('MTEyODI2MjczNjE2NjUzNTE5OQ.GRT3cM.__Fenb-Qn5fFHhC5fQHpJqHTT3-rXeWSuod0AA')
