@@ -515,10 +515,10 @@ async def leaderboard(Interaction: discord.Interaction, page: int = 1):
 
     for i, (user_id, wins) in enumerate(leaderboard_items, start=start_index + 1):
         user = await bot.fetch_user(int(user_id))
-        username = user.name if user else f'Unknown User ({user_id})'
         medal = medal_emojis.get(i, "")
 
         user_profile = user_profiles.get(user_id)
+        username = user_profile.get('ign', 'Not assigned') if user_profile else user.name
         team = user_profile.get('team', 'Not assigned') if user_profile else 'Not assigned'
         country = user_profile.get('nationality', 'Not assigned') if user_profile else 'Not assigned'
 
@@ -532,7 +532,7 @@ async def leaderboard(Interaction: discord.Interaction, page: int = 1):
         team_emoji = team_emojis.get(team, "Not assigned")
 
 
-        country_flag = country_flags.get(country, "")
+        country_flag = country_flags.get(country.upper(), "")
 
         embed.add_field(name=f'**Rank {i} {medal}**',
                         value=f'{country_flag} {username} | Wins: {wins} | Team: {team_emoji}',
@@ -886,4 +886,4 @@ async def adminhelp(Interaction: discord.Interaction):
     await Interaction.response.send_message(embed=embed)
 
 
-bot.run('MTEyODI2MjczNjE2NjUzNTE5OQ.GxleDZ.jdTlDOlqVD0UtYi1Abo2wY6tx3f81fhZJZS58E')
+bot.run('MTEyODI2MjczNjE2NjUzNTE5OQ.GLw1Ae.14pPXZJFWCwK9Ji9g70jo4_vwYi_LA2_ABlq_g')
